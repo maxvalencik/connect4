@@ -8,10 +8,25 @@
 const width = 7;
 const height = 6;
 
-const player = [1,2]; // array of players
+let player = [1,2]; // array of players
 let currPlayer = player[0]; // active player: 1 or 2
 
 let board = []; // array of rows, each row is array of cells  (board[y][x]) 
+
+//reset game with button
+const resetButton = document.getElementById('button');
+resetButton.addEventListener('click', (e)=>{
+  e.preventDefault;
+  //erase existing HTML Board
+  document.getElementById('board').innerHTML='';
+  //reset players
+  player=[1,2];
+  currPlayer = player[0];
+  playerName();
+  //new boards
+  makeBoard();
+  makeHtmlBoard();
+});
 
 /** makeBoard: create in-JS board structure:
  *    board = array of rows, each row is array of cells  (board[y][x])
@@ -56,6 +71,7 @@ function makeHtmlBoard() {
     htmlBoard.append(row);
   }
 }
+
 
 /** findSpotForCol: given column x, return top empty y (-1 if filled) */
 
@@ -132,7 +148,8 @@ function handleClick(evt) {
   // switch currPlayer 1 <-> 2
   [player[0], player[1]]=[player[1],player[0]];
   currPlayer=player[0];
-
+   //switch player name
+  playerName();
 }
 
 /** checkForWin: check board cell-by-cell for "does a win start here?" */
@@ -174,5 +191,16 @@ function checkForWin() {
   }
 }
 
+
+// Change player name on page
+function playerName (){
+  currPlayer === 1? color='blue' : color='red';
+  const playerName = document.getElementById('player');
+  playerName.innerText = `Player #${currPlayer} (${color})`;
+}
+
+
 makeBoard();
 makeHtmlBoard();
+//load currPlayer at first page load
+playerName();

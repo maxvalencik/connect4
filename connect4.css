@@ -1,9 +1,78 @@
 /* game board table */
 
+body{
+  background-color: rgb(73, 72, 72);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#layout{
+  width: 70vw;
+  height: 98vh;
+  background-color: steelblue;
+  border-radius: 30px;
+}
+
+#header{
+  display: flex;
+  flex-direction: horizontal;
+  align-items: center;
+  justify-content: center;
+  margin: 50px 0px 25px 0px;
+}
+
+#title{
+  font-size: 2.2em;
+  text-transform: uppercase;
+  text-shadow: 2px 2px lightslategray;
+  font-family: monaco;
+}
+
+img{
+  width: 10%;
+  height: 10%;
+  margin-left: 2%;
+}
+
+#button{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5%;
+}
+
+button{
+  width: 15%;
+  height: 5%;
+  text-transform: uppercase;
+  border-radius: 10px;
+  font-family: monaco;
+  background-color: rgb(207, 106, 106);
+}
+
+#player{
+  text-align: center;
+  margin-bottom: 5%;
+  text-transform:capitalize;
+  font-family: monaco;
+  font-size: 0.8em;
+}
+
+#game{
+  display: flex;
+  justify-content: center;
+  height: 50vh;
+  width: 70vw;
+}
+
+#board{
+  border-collapse: collapse;
+  width: 35vw;
+}
+
 #board td {
-  width: 50px;
-  height: 50px;
-  border: solid 1px #666;
+  border: solid 5px rgb(47, 79, 139);
 }
 
 /* pieces are div within game table cells: draw as colored circles */
@@ -27,7 +96,7 @@
 /* column-top is table row of clickable areas for each column */
 
 #column-top td {
-  border: dashed 1px lightgray;
+  border: dashed 1px black;
 }
 
 #column-top td:hover {
