@@ -194,7 +194,7 @@ function checkForWin() {
 
 // Change player name on page
 function playerName (){
-  currPlayer === 1? color='blue' : color='red';
+  currPlayer === 1? color='yellow' : color='red';
   const playerName = document.getElementById('player');
   playerName.innerText = `Player #${currPlayer} (${color})`;
 }

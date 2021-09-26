@@ -1,17 +1,18 @@
 /* game board table */
 
 body{
-  background-color: rgb(73, 72, 72);
+  background-color: rgb(41, 39, 39);
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  width: 100vw;
 }
 
 #layout{
-  width: 70vw;
-  height: 98vh;
-  background-color: steelblue;
+  width: 650px;
+  height: 650px;
+  background-color: rgb(205, 229, 248);
   border-radius: 30px;
 }
 
@@ -20,7 +21,7 @@ body{
   flex-direction: horizontal;
   align-items: center;
   justify-content: center;
-  margin: 50px 0px 25px 0px;
+  margin: 30px 0px 15px 0px;
 }
 
 #title{
@@ -31,20 +32,20 @@ body{
 }
 
 img{
-  width: 10%;
-  height: 10%;
-  margin-left: 2%;
+  width: 50px;
+  height: 50px;
+  margin-left: 10px;
 }
 
 #button{
   display: flex;
   justify-content: center;
-  margin-bottom: 5%;
+  margin-bottom:15px;
 }
 
 button{
-  width: 15%;
-  height: 5%;
+  width: 100px;
+  height: 30px;
   text-transform: uppercase;
   border-radius: 10px;
   font-family: monaco;
@@ -53,7 +54,7 @@ button{
 
 #player{
   text-align: center;
-  margin-bottom: 5%;
+  margin-bottom: 15px;
   text-transform:capitalize;
   font-family: monaco;
   font-size: 0.8em;
@@ -62,17 +63,16 @@ button{
 #game{
   display: flex;
   justify-content: center;
-  height: 50vh;
-  width: 70vw;
 }
 
 #board{
   border-collapse: collapse;
-  width: 35vw;
 }
 
 #board td {
-  border: solid 5px rgb(47, 79, 139);
+  border: solid 8px rgb(47, 87, 161);
+  width: 55px;
+  height: 55px;
 }
 
 /* pieces are div within game table cells: draw as colored circles */
@@ -82,7 +82,8 @@ button{
   width: 80%;
   height: 80%;
   border-radius: 50%;
-  background-color: blue;
+  border: solid 1px black;
+  background-color: rgba(247, 243, 30, 0.973);
 }
 
 .piece2 {
@@ -90,7 +91,8 @@ button{
   width: 80%;
   height: 80%;
   border-radius: 50%;
-  background-color: red;
+  border: solid 1px black;
+  background-color: rgba(255, 0, 0, 0.911);
 }
 
 /* column-top is table row of clickable areas for each column */
@@ -100,5 +102,5 @@ button{
 }
 
 #column-top td:hover {
-  background-color: gold;
+  background-color: lightcoral;
 }
