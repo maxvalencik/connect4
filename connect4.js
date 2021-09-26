@@ -128,7 +128,11 @@ function handleClick(evt) {
 
   // check for win
   if (checkForWin()) {
-    return endGame(`Player ${currPlayer} won!`);
+    //remove eventListener to the top line to avoid players keep playing
+    let top = document.getElementById('column-top');
+    top.removeEventListener('click',handleClick);
+    // return winning alert
+    return endGame(`Player ${currPlayer} won!...reset to play again...`);
   }
 
   // check for tie
