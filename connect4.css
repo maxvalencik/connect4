@@ -77,22 +77,31 @@ button{
 
 /* pieces are div within game table cells: draw as colored circles */
 
-.piece1 {
+.piece{
   margin: 5px;
   width: 80%;
   height: 80%;
   border-radius: 50%;
   border: solid 1px black;
+  animation-name: dropdown;
+  animation-duration: 1.5s;
+}
+
+.piece1 {
   background-color: rgba(247, 243, 30, 0.973);
 }
 
 .piece2 {
-  margin: 5px;
-  width: 80%;
-  height: 80%;
-  border-radius: 50%;
-  border: solid 1px black;
   background-color: rgba(255, 0, 0, 0.911);
+}
+
+@keyframes dropdown {
+  from {
+    transform: translateY(-400px);
+  }
+   to {
+    transform: translateY(0px);
+  }
 }
 
 /* column-top is table row of clickable areas for each column */

@@ -16,7 +16,7 @@ let board = []; // array of rows, each row is array of cells  (board[y][x])
 //reset game with button
 const resetButton = document.getElementById('button');
 resetButton.addEventListener('click', (e)=>{
-  e.preventDefault;
+  //e.preventDefault;
   //erase existing HTML Board
   document.getElementById('board').innerHTML='';
   //reset players
@@ -93,7 +93,8 @@ function findSpotForCol(x) {
 function placeInTable(y, x) {
   // make a div and insert into correct table cell
   let token = document.createElement('div');
-  currPlayer === 1? token.className = 'piece1': token.className = 'piece2';
+  token.classList.add('piece');
+  currPlayer === 1? token.classList.add('piece1'):token.classList.add('piece2');
   //select the (x,y) cell in the htmlBoard
   let correctCell = document.getElementById(`${y}-${x}`);
   //append the created dic to the correct cell
@@ -113,7 +114,8 @@ function handleClick(evt) {
   // get x from ID of clicked cell in top row. All IDs are the value x of the column
   let clickedCell = evt.target;
   //retrieve the id
-  let x = clickedCell.id;
+  //HTML converted the id to a string. the + sign converts it back to a int.
+  let x = +clickedCell.id;
 
   // get next spot in column (if none, ignore click)
   let y = findSpotForCol(x);
